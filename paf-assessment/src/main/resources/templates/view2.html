@@ -9,7 +9,7 @@
   <body>
     <h1 data-th-text="${breweryName}"></h1>
     <form method="GET" action="/">
-      <button type="submit"></button>
+      <button type="submit">Back</button>
     </form>
     <br />
     <div data-th-if="${breweryExists}">
@@ -23,7 +23,6 @@
             <td>Address:</td>
             <td>
               <span data-th-text="*{address1}"></span>
-              <br />
               <span data-th-text="*{address2}"></span>
               <br />
               <span data-th-text="*{city}"></span>
@@ -36,8 +35,8 @@
           <tr>
             <td>Website:</td>
             <td>
-              <a data-th-href="@{url(url=*{website})}">
-                <span data-th-text="*{website}"></span>
+              <a data-th-href="@{*{website}}" data-th-target="_blank">
+                <span>Go</span>
               </a>
             </td>
           </tr>
@@ -45,9 +44,39 @@
       </div>
       <div>
         <h3>Beers</h3>
-        <form method="POST" data-th-action="@{/beer/order}">
+        <form
+          method="POST"
+          data-th-action="@{/brewery/{breweryId}/order(breweryId=${brewery.breweryId})}"
+        >
           <button type="submit">Place Order</button>
-          <table></table>
+          <table border="solid">
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Quantity</th>
+            </tr>
+            <tr
+              data-th-each="beer, itemStat:${brewery.beers}"
+              data-th-object="${submitOrder}"
+            >
+              <td>
+                <span
+                  data-th-text="${beer.beerName}"
+                  data-th-value="${beer.beerId}"
+                  data-th-field="*{orders[__${itemStat.index}__].beerId}"
+                ></span>
+              </td>
+              <td><span data-th-text="${beer.beerDescription}"></span></td>
+              <td>
+                <input
+                  type="number"
+                  min="0"
+                  data-th-field="*{orders[__${itemStat.index}__].quantity}"
+                  required
+                />
+              </td>
+            </tr>
+          </table>
         </form>
       </div>
     </div>

@@ -19,10 +19,13 @@ public class UtilService {
 
     public static Beer createBeerFromRowset(SqlRowSet rs){
 
+        // SELECT beers.id as beer_Id, beers.name AS beer_name, beers.descript AS description, breweries.id AS brewery_id,
+        // breweries.name AS brewery_name 
+
         Beer beer = new Beer();
         beer.setBeerId(rs.getInt("beer_id"));
         beer.setBeerName(rs.getString("beer_name"));
-        beer.setBeerDescription(rs.getString("description"));
+        beer.setBeerDescription(rs.getString("beer_description"));
         beer.setBreweryId(rs.getInt("brewery_id"));
         beer.setBreweryName(rs.getString("brewery_name"));
 
@@ -43,6 +46,6 @@ public class UtilService {
         brewery.setPhone(rs.getString("phone"));
         brewery.setWebsite(rs.getString("website"));
         brewery.setDescription(rs.getString("description"));
-        return null;
+        return brewery;
     }
 }

@@ -6,8 +6,9 @@ CREATE DATABASE brewery;
 
 USE DATABASE brewery;
 
-source beers.sql;
-source breweries.sql;
-source categories.sql;
-source geocodes.sql;
-source styles.sql;
+source ../database/breweries.sql
+source ../database/breweries.sql;
+source ../database/categories.sql;
+source ../database/geocodes.sql;
+source ../database/styles.sql;
+

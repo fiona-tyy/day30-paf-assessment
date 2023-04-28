@@ -9,10 +9,10 @@
   <body>
     <h1 data-th-text="${styleName}"></h1>
     <form method="GET" action="/">
-      <button type="submit"></button>
+      <button type="submit">Back</button>
     </form>
     <h3 data-th-unless="${beersFound}">No beers found for this style</h3>
-    <table data-th-if="${beersFound}" data-th-object="${beers}">
+    <table data-th-if="${beersFound}" data-th-object="${beers}" border="solid">
       <tr>
         <th>Beer Name</th>
         <th>Description</th>

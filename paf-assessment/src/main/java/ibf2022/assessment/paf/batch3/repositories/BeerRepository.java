@@ -51,7 +51,9 @@ public class BeerRepository {
 
 	// DO NOT CHANGE THE METHOD'S NAME OR THE RETURN TYPE OF THIS METHOD
 	public Optional<Brewery> getBeersFromBrewery(Integer breweryId) {
-		// TODO: Task 4
+
+		// TODO: Task 4 
+
 		List<Brewery> breweries = new LinkedList<>();
 		List<Beer> beers = new LinkedList<>();
 
@@ -60,14 +62,16 @@ public class BeerRepository {
 			breweries.add(UtilService.createBreweryFromRowset(rs));
 			beers.add(UtilService.createBeerFromRowset(rs));
 		}
-
 		if(breweries.isEmpty()){
 			return Optional.empty();
-		}
-		Brewery brewery = breweries.get(0);
-		brewery.setBeers(beers);
+		} else{
+			Brewery brewery = breweries.get(0);
+			brewery.setBeers(beers);
+			// System.out.println(">>>checkpoint inside repo getBeersFromBrewery: "+ brewery);
+			return Optional.of(brewery);
 
-		return Optional.of(brewery);
+		}
+
 	}
 
 }
