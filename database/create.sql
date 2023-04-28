@@ -2,13 +2,13 @@
 -- Write SQL statements in this file to create the brewery database and 
 -- populate the database with the given SQL files
 
-CREATE DATABASE brewery;
+CREATE DATABASE railway;
 
-USE DATABASE brewery;
+USE DATABASE railway;
 
-source ../database/breweries.sql
-source ../database/breweries.sql;
-source ../database/categories.sql;
-source ../database/geocodes.sql;
-source ../database/styles.sql;
+source /Users/Fiona/Documents/TFIP/03_Persistence_Analytics_Fundamentals/assessment_template/database/beers.sql
+source /Users/Fiona/Documents/TFIP/03_Persistence_Analytics_Fundamentals/assessment_template/database/breweries.sql;
+source /Users/Fiona/Documents/TFIP/03_Persistence_Analytics_Fundamentals/assessment_template/database/categories.sql;
+source /Users/Fiona/Documents/TFIP/03_Persistence_Analytics_Fundamentals/assessment_template/database/geocodes.sql;
+source /Users/Fiona/Documents/TFIP/03_Persistence_Analytics_Fundamentals/assessment_template/database/styles.sql;
 
