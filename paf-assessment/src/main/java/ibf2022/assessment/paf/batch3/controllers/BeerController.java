@@ -36,7 +36,7 @@ public class BeerController {
 
 	//TODO Task 2 - view 0
 
-	@GetMapping(path = "/")
+	@GetMapping(path = {"/","/index.html"})
 	public String showLanding(Model model){
 		List<Style> styles = beerRepo.getStyles();
 		model.addAttribute("styles", styles);

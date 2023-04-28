@@ -17,9 +17,6 @@ import ibf2022.assessment.paf.batch3.repositories.OrderRepository;
 public class BeerService {
 
 	@Autowired
-	BeerRepository beerRepository;
-
-	@Autowired
 	OrderRepository orderRepository;
 
 	// DO NOT CHANGE THE METHOD'S NAME OR THE RETURN TYPE OF THIS METHOD
